@@ -5,6 +5,7 @@
 		public $user;
 		public $userId;
 		const NAME = "Faruk Khan";
+		public static $age = "30";
 
 		public function __construct($userName, $userId){
 			$this->user = $userName;
@@ -13,8 +14,9 @@
 			echo "Username is $this->user and userid is $this->userId";
 		}
 
-		public function display(){
-			echo "Full name is: ".UserData::NAME;
+		public static function display(){
+			echo "Full name is: ".UserData::NAME ."<br>";
+			echo "Age is : ".self::$age; 
 		}
 
 		public function __destruct(){
@@ -27,7 +29,7 @@
 	$id = "34";
 	$ur = new UserData($user, $id);
 	echo "<br>";
-	$ur->display();
+	UserData::display();
 
 
  ?>
